@@ -3,6 +3,9 @@
 const express = require('express');
 const app = express();
 
+// __dirname is the directory that the executing script is in
+// TODO: This is for static sites only so it wont work
+app.use(express.static(__dirname + "/public/pages"));
 
 app.use((req, res, next) => {
     console.log('Time: ', Date.now());
